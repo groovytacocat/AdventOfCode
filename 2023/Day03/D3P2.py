@@ -1,6 +1,6 @@
 matrix = []
 
-f = open('gears.txt')
+f = open('sample.txt')
 for line in f:
     row = line[:-1]
     matrix.append(row)
@@ -30,33 +30,28 @@ def numBuild(index, rownum, mov):
         return num
 
 def newCheck(rownum, symind):
-    val = 0
+    val = []
     if not matrix[rownum][symind].isdecimal():
         lnum = numBuild(symind, rownum, 'l')
-        if lnum:
-            print(f'Left built: {lnum}')
-            val += int(lnum)
+    	if lnum:
+            val.append(lnum)
         rnum = numBuild(symind, rownum, 'r')
-        if rnum:
-            print(f'Right built: {rnum}')
-            val += int(rnum)
+    	if rnum:
+            val.append(rnum)
     else:
         num = numBuild(symind,rownum,'l') + matrix[rownum][symind] + numBuild(symind, rownum, 'r')
         if num:
-            print(f'Middle built: {num}')
-        val += int(num)
+            val.append(num)
     return val
 
 ans = 0
 for i in range(1, len(matrix)-1):
     for j in range(len(matrix[i])):
-        if not matrix[i][j].isalnum() and not matrix[i][j] == '.':
-            above = matrix[i-1][j-3:j+4]
-            current = matrix[i][j-3:j+4]
-            below = matrix[i+1][j-3:j+4]
-            print(f'Matrix is:\n{above}\n{current}\n{below}')
+        if matrix[i][j].isalnum() == '*':
+            gears = []
             for val in range(i-1, i+2):
-                ans += newCheck(val, j)
+                gears.append(newCheck(val, j))
+            print(gears)
             print()
     print()
 print(f'No shot?: {ans}')
