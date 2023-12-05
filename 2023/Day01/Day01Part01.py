@@ -1,6 +1,6 @@
 import re
 
-f = open('input.txt')
+f = open('trebuchet.txt')
 
 sum = 0
 
