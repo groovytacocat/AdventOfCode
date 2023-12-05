@@ -1,6 +1,6 @@
 import re
 
-f = open('input.txt')
+f = open('dice.txt')
 
 ans = 0
 
