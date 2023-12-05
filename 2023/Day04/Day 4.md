@@ -104,7 +104,7 @@ Hopefully I interpreted his advice correctly and because I'm new to Python inste
 I added that to the running total being kept and voila. 
 
 ```python
-f = open('input.txt')
+f = open('scratchers.txt')
 windict = {}
 total = {}
 cardPoints = 0
