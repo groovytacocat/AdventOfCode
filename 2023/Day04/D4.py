@@ -1,4 +1,4 @@
-f = open('input.txt')
+f = open('scratchers.txt')
 windict = {}
 total = {}
 cardPoints = 0
