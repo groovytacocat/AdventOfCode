@@ -38,7 +38,7 @@ My initial solution was a mix of C and awk where I read each line of input and p
 
 ```python
 import re
-f = open('input.txt')
+f = open('trebuchet.txt')
 sum = 0
 for line in f:
     line = re.sub("[a-zA-Z]", "", line)
@@ -94,7 +94,7 @@ Resulting in the below: Personally I'm not a fan of all the nested if-else and t
 ```python
 from collections import deque
 mydict = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
-f = open('input.txt')
+f = open('trebuchet.txt')
 ans = 0
 for line in f:
     mystack = deque() 

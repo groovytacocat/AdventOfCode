@@ -86,7 +86,7 @@ Then for Part 1 if the max of each dice list was <= the relevant limit add the G
 
 ```python
 import re
-f = open('input.txt')
+f = open('dice.txt')
 ans = 0
 powersum = 0
 for line in f:
